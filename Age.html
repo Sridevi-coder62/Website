@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Age</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #667eea, #764ba2);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
+
+        h1 {
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 16px;
+            color: #555555;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #667eea;
+            color: white;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #764ba2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hello, <span class="highlight">{{ name }}</span>!</h1>
+        <p>You are currently <span class="highlight">{{ age }}</span> years old.</p>
+
+        <h2>Card Suggestions:</h2>
+
+        {% if age >= 18 and age < 21 %}
+            <p>You're approaching a big milestone! Look for 21st birthday cards.</p>
+        {% elif age == 21 or age == 30 or age == 40 or age == 50 or age == 60 %}
+            <p>Happy Milestone Birthday! We have great cards for your {{ age }}th birthday.</p>
+        {% else %}
+            <p>We have a wide range of general birthday cards available.</p>
+        {% endif %}
+
+        <a href="/">Go back to the input form</a>
+    </div>
+</body>
+</html>
